@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Web Services Lab</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="Enter_ID">Enter Course Id (Ex: TCSS450)</string>
+    <string name="Enter_ShortDesc">Enter Course Short Description\n(Ex: Mobile App Programming)</string>
+    <string name="Enter_LongDesc">Enter Course Long Description</string>
+    <string name="Enter_Prereq">Enter prereqs</string>
+    <string name="add_course">Add Course</string>
+</resources>
