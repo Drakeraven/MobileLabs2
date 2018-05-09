@@ -7,4 +7,9 @@
     <string name="Enter_LongDesc">Enter Course Long Description</string>
     <string name="Enter_Prereq">Enter prereqs</string>
     <string name="add_course">Add Course</string>
+    <string name="action_about">Info</string>
+    <string name="animating">UWT</string>
+    <string name="btn_spin_text">SPIN</string>
+    <string name="btn_move_text">MOVE</string>
+    <string name="btn_fade_text">FADE</string>
 </resources>

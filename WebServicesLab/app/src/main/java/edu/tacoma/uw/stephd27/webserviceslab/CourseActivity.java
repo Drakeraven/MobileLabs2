@@ -1,5 +1,6 @@
 package edu.tacoma.uw.stephd27.webserviceslab;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -32,6 +33,8 @@ public class CourseActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_course);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setIcon(R.drawable.toolbar_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +72,12 @@ public class CourseActivity extends AppCompatActivity implements
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_about) {
+            Toast.makeText(this, "Showing courses in CSS", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_animations) {
+            Intent intent = new Intent(this, AnimationsActivity.class);
+            startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);

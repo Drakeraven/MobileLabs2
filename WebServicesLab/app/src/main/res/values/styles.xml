@@ -1,11 +1,36 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/uwPurple</item>
+        <item name="colorPrimaryDark">@color/uwBlack</item>
+        <item name="colorAccent">@color/uwMetallicGold</item>
+        <item name="android:font" tools:targetApi="o">@font/gothic</item>
+        <item name="android:textColor">@color/uwWhite</item>
+        <item name="android:windowBackground">@color/uwBlack</item>
+        <!--<item name="android:tint">@color/uwPurple</item>-->
+        <item name="android:textColorHint">@color/uwLightGray</item>
+        <item name="buttonStyle">@style/MyButtonStyle</item>
+
+
+    </style>
+    
+    <style name="EditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/uwDarkGray</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="MyButtonStyle">
+        <item name="android:background">@drawable/uw_button</item>
+        <item name="android:textColor">@color/uw_button_colors</item>
+    </style>
+
+    <style name="CourseIdEditTextStyle" parent ="EditTextStyle">
+        <item name="android:textSize">24sp</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

@@ -1,5 +1,7 @@
 package edu.tacoma.uw.stephd27.webserviceslab;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -43,6 +45,8 @@ public class CourseListFragment extends Fragment {
     private static final String COURSE_URL =
             "http://stephd27.000webhostapp.com/list.php?cmd=courses";
     private RecyclerView mRecyclerView;
+    private View mLoadingView;
+    private int mLongAnimationDuration;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -74,6 +78,10 @@ public class CourseListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_course_list, container, false);
+
+        mLoadingView = getActivity().findViewById(R.id.loading_spinner);
+
+        mLongAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -113,6 +121,37 @@ public class CourseListFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+    private void crossfade() {
+
+
+
+        // Animate the loading view to 0% opacity. After the animation ends,
+        // set its visibility to GONE as an optimization step (it won't
+        // participate in layout passes, etc.)
+        mLoadingView.animate()
+                .alpha(0f)
+                .setDuration(mLongAnimationDuration)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        mLoadingView.setVisibility(View.GONE);
+                    }
+                });
+
+        // Set the content view to 0% opacity but visible, so that it is visible
+        // (but fully transparent) during the animation.
+        mRecyclerView.setAlpha(0f);
+        mRecyclerView.setVisibility(View.VISIBLE);
+
+        // Animate the content view to 100% opacity, and clear any animation
+        // listener set on the view.
+        mRecyclerView.animate()
+                .alpha(1f)
+                .setDuration(mLongAnimationDuration)
+                .setListener(null);
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this
@@ -181,6 +220,7 @@ public class CourseListFragment extends Fragment {
 
             // Everything is good, show the list of courses.
             if (!mCourseList.isEmpty()) {
+                crossfade();
                 mRecyclerView.setAdapter(new MyCourseRecyclerViewAdapter(mCourseList, mListener));
             }
         }

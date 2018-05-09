@@ -12,28 +12,32 @@
         android:layout_height="wrap_content"
         android:hint="@string/Enter_ID"
         android:inputType="text"
-        android:id="@+id/add_course_id"/>
+        android:id="@+id/add_course_id"
+        style="@style/CourseIdEditTextStyle"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Enter_ShortDesc"
         android:inputType="text"
-        android:id="@+id/add_course_short_desc"/>
+        android:id="@+id/add_course_short_desc"
+        style="@style/EditTextStyle"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Enter_LongDesc"
         android:inputType="text"
-        android:id="@+id/add_course_long_desc"/>
+        android:id="@+id/add_course_long_desc"
+        style="@style/EditTextStyle"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Enter_Prereq"
         android:inputType="text"
-        android:id="@+id/add_course_prereqs"/>
+        android:id="@+id/add_course_prereqs"
+        style="@style/EditTextStyle"/>
 
     <Button
         android:id="@+id/btnCourse"
@@ -41,6 +45,9 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:text="@string/add_course"
-        android:layout_gravity="right" />
-
+        android:layout_gravity="right"
+        style="@style/MyButtonStyle"
+        />
+    <!--android:background="@drawable/uw_button"-->
+    <!--android:textColor="@color/uw_button_colors"-->
 </LinearLayout>
