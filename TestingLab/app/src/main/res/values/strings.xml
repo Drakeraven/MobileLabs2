@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Testing Lab</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="txt_pwd">Enter Password</string>
+    <string name="txt_register">Register</string>
+    <string name="txt_login">Already have an account? Login here</string>
+    <string name="txt_submit">Login</string>
+    <string name="txt_logout">Logout</string>
+    <string name="hello">Hello</string>
+</resources>
